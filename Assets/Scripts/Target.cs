@@ -36,7 +36,7 @@ public class Target : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ballet")
+        if (other.gameObject.tag == "Bullet")
         {
             
             

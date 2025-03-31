@@ -21,7 +21,7 @@ public class Key : MonoBehaviour
         }
         else if (keyColor == KeyColor.Blue)
         {
-            this.GetComponent<MeshRenderer>().material.color = Color.yellow;
+            this.GetComponent<MeshRenderer>().material.color = Color.blue;
         }
         else if (keyColor == KeyColor.Red)
         {
@@ -33,30 +33,30 @@ public class Key : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Player player = other.GetComponent<Player>();
+            Player player = other.GetComponent<Player>(); //get reference to the Player component of object
 
-            if (keyColor == KeyColor.Green)
+            if (keyColor == KeyColor.Green) // if enum keycolor is green
             {
-                if (player.hasGreenKey == false)
+                if (player.hasGreenKey == false) // does the player have green key?
                 {
-                    player.hasGreenKey = true;
-                    Destroy(player.gameObject);
+                    player.hasGreenKey = true; // player has green key = yes
+                    Destroy(gameObject); //destroy green key, not the player
                 }
             }
-            else if (keyColor == KeyColor.Blue)
+            else if (keyColor == KeyColor.Blue) //if enum keycolor is blue
             {
-                if (player.hasBlueKey == false)
+                if (player.hasBlueKey == false) // does player have blue key
                 {
-                    player.hasBlueKey = true;
-                    Destroy(gameObject);
+                    player.hasBlueKey = true; //player has blue key = yes
+                    Destroy(gameObject); // destroy blue key
                 }
             }
-            else if (keyColor == KeyColor.Blue)
+            else if (keyColor == KeyColor.Red) //red not blueee
             {
-                if (player.hasRedKey == true)
+                if (player.hasRedKey == false) //does player have red key
                 {
-                    player.hasRedKey = true;
-                    Destroy(gameObject);
+                    player.hasRedKey = true; //player has red key = yes
+                    Destroy(gameObject); //Destroy red
                 }
             }
             

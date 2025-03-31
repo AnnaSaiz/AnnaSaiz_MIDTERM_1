@@ -15,7 +15,8 @@ public class LockedDoor : MonoBehaviour
 
     private void Start()
     {
-        if (keyColorRequired = KeyColor.Green)
+        
+        if (keyColorRequired == KeyColor.Green)
         {
             this.GetComponent<MeshRenderer>().material.color = Color.green;
         }
@@ -34,6 +35,7 @@ public class LockedDoor : MonoBehaviour
         if(hasBeenOpened == false)
         {
             this.transform.position = doorFinalPosition.position;
+            hasBeenOpened = true;
         }
     }
 }
